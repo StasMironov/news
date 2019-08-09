@@ -66,3 +66,7 @@ group :production do
   gem 'pg', '~> 1.1', '>= 1.1.2'
   gem 'rails_12factor', '0.0.2'
 end
+
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
+end
