@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c98795a-9770-403a-969e-742b62812222" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="259">
-              <caret line="65" column="3" lean-forward="false" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+              <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -38,7 +36,7 @@
       <file leaf-file-name="Gemfile.lock" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="-583">
               <caret line="161" column="10" lean-forward="false" selection-start-line="161" selection-start-column="10" selection-end-line="161" selection-end-column="10" />
               <folding />
             </state>
@@ -196,12 +194,12 @@
       <workItem from="1565345758741" duration="70000" />
       <workItem from="1565345992444" duration="671000" />
       <workItem from="1565346971801" duration="12000" />
-      <workItem from="1565347103130" duration="2524000" />
+      <workItem from="1565347103130" duration="2642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4517000" />
+    <option name="totallyTimeSpent" value="4635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="465" y="168" width="1940" height="713" extended-state="0" />
@@ -466,7 +464,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="-583">
           <caret line="161" column="10" lean-forward="false" selection-start-line="161" selection-start-column="10" selection-end-line="161" selection-end-column="10" />
           <folding />
         </state>
@@ -475,7 +473,7 @@
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="65" column="3" lean-forward="false" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+          <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
           <folding />
         </state>
       </provider>
