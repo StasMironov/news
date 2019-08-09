@@ -61,6 +61,6 @@ group :production do
   gem 'pg'
 end
 
-group :development do
-  gem 'sqlite'
+group :devlopment, :test do
+  gem 'sqlite3'
 end
