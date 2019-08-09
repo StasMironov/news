@@ -57,16 +57,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-
-group :development, :test do
-  gem 'spring',      '1.1.3'
-end
-
 group :production do
-  gem 'pg', '~> 1.1', '>= 1.1.2'
-  gem 'rails_12factor', '0.0.2'
+  gem 'pg'
 end
 
-group :development, :test do
-  gem 'sqlite3'
+group :development do
+  gem 'sqlite'
 end
