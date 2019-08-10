@@ -62,7 +62,7 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    chromedriver-helper (2.1.1)
+    chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coffee-rails (4.2.2)
@@ -102,7 +102,7 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.3-x64-mingw32)
       mini_portile2 (~> 2.4.0)
-    pg (0.17.1-x64-mingw32)
+    pg (1.1.4-x64-mingw32)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -194,7 +194,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
-  chromedriver-helper
+  chromedriver-helper (= 1.2.0)
   coffee-rails (~> 4.2)
   duktape
   jbuilder (~> 2.5)
