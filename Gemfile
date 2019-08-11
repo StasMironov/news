@@ -66,3 +66,6 @@ end
 gem 'sdoc',         '0.4.0', group: :doc
 
 gem 'chromedriver-helper', '1.2.0'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
