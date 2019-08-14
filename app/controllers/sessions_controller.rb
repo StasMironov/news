@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
         # Осуществить вход пользователя
         log_in user
-        redirect_to user
+        redirect_back_or user
     else
         # Выдать сообщение об ошибке
         flash.now[:danger] = 'Неверный email и(или) пароль!'

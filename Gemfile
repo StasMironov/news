@@ -72,3 +72,6 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 gem 'jquery-rails'
+gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate', '~> 1.0'
