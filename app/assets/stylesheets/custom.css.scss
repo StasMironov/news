@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
@@ -303,5 +302,6 @@ input[type="text"], input[type="textarea"]   {
 h1 {
   text-align: center;
   margin-bottom: 25px;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid;
+  border-bottom-color: rgb(232, 232, 232);;
 }
