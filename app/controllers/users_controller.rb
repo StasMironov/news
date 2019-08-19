@@ -22,7 +22,7 @@ before_action :admin_user, only: :destroy
     log_in @user
         if @user.save
             flash[:succes] = "Wellcome to the Sample App!"
-            redirect_to @user
+            redirect_to root_path
         else
             render 'new'
         end
