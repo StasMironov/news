@@ -1,21 +1,20 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container top">
-        <%= link_to "sample app", root_path, id: "logo" %>
+        <%= link_to "Доска объявлений", root_path, id: "logo" %>
+
+
+
         <nav>
             <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "Help", help_path %></li>
-
+                <li><%= link_to "Главная", root_path %></li>
                 <% if logged_in? %>
-                    <li><%= link_to "Users", users_path %></li>
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Account <b class="caret"></b>
+                        Аккаунт <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                         <li><%= link_to "Профиль", current_user %></li>
                         <li><%= link_to "Настройки", current_user %></li>
-                        <li class="divider"></li>
                         <li>
                             <%= link_to "Выход", logout_path, method: "delete" %>
                         </li>
@@ -24,6 +23,29 @@
                 <% else %>
                     <li><%= link_to "Вход", login_path %></li>
                 <% end %>
+
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Поиск <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                    <div class="dropdown-menu__title">Поиск по автору:</div>
+                        <%= form_tag(results_path, method: :get) do %>
+                           <%= text_field_tag :author, params[:author] %>
+                           <%= submit_tag 'Искать' %>
+                        <% end %>
+                    </li>
+                    <li>
+                    <div class="dropdown-menu__title">Поиск по тектсу:</div>
+                        <%= form_tag(results_path, method: :get) do %>
+                           <%= text_field_tag :content, params[:content] %>
+                           <%= submit_tag 'Искать' %>
+                        <% end %>
+                    </li>
+                </ul>
+              </li>
+
             </ul>
         </nav>
     </div>

@@ -59,7 +59,7 @@ group :production do
   gem "pg"
 end
 
-group :development, :test do
+group  :test do
   gem "sqlite3"
 end
 
@@ -75,3 +75,8 @@ gem 'jquery-rails'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'fog', '~> 1.39'
+gem 'pg_search'
+gem 'trix-rails', require: 'trix'

@@ -1,14 +1,40 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, "Объявление") %>
+<div class="row microposts-show">
+<div class="col-md-12 microposts-show__title">
+  <h3>Заголовок:</h3>
+  <div><%= @micropost.title %></div>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
+<div class="col-md-12 microposts-show__img">
+    <%= image_tag (@micropost.picture.url) %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @micropost.user_id %>
-</p>
+<div class="col-md-12 microposts-show__content">
+  <div>Описание:</div>
+  <div><%= @micropost.content %></div>
+</div>
 
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
-<%= link_to 'Back', microposts_path %>
+<div class="col-md-12 microposts-show__author">
+  <strong>Автор:</strong>
+  <%= link_to(@micropost.user.name, @micropost.user, class: "microposts__link") %>
+</div>
+
+<div class="col-md-12 microposts-show__status">
+  <strong>Статус:</strong>
+  <%= active_status(@micropost.status) %>
+</div>
+
+<div class="timestamp col-md-12 microposts-show__date">
+    <span>Дата:</span> <%= time_ago_in_words(@micropost.created_at) %>
+</div>
+
+<div class="col-md-12 footer-summary">
+    <strong>Теги:</strong>
+    <%= raw @micropost.tags.map(&:name).map{ |t| link_to t, tag_path(t),
+                                                   class: 'tag tag-primary' }.join(' ')%>
+</div>
+</div>
+
+<div class="row">
+<%= render 'disqus' %>
+</div>

@@ -4,3 +4,10 @@ michael:
   name: Test
   email: alsagarr22@yandex.ru
   password_digest: <%= User.digest('password') %>
+
+
+stas:
+  name: Richard
+  email: alsagarr2@yandex.ru
+  password_digest: <%= User.digest('password') %>
+  admin: true

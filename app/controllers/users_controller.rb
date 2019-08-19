@@ -4,7 +4,7 @@ before_action :correct_user, only: [:edit, :update]
 before_action :admin_user, only: :destroy
 
     def index
-        @users = User.paginate(page: params[:page], per_page: 5)
+        @users = User.paginate(page: params[:page], per_page: 5).distinct
     end
 
     def show
@@ -13,12 +13,13 @@ before_action :admin_user, only: :destroy
     end
 
     def new
+        @post = Micropost.new
         @user = User.new
     end
 
     def create
+    @user = User.new(user_params)
     log_in @user
-        @user = User.new(user_params)
         if @user.save
             flash[:succes] = "Wellcome to the Sample App!"
             redirect_to @user
@@ -55,13 +56,7 @@ before_action :admin_user, only: :destroy
     # Предфильтры
     # Подтверждает вход пользователя
 
-    def logged_in_user
-        unless logged_in?
-            store_location
-            flash[:danger] = "Пожалуйста выполните вход в систему"
-            redirect_to login_url
-        end
-    end
+
 
     def correct_user
         @user = User.find(params[:id])

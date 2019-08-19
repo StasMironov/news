@@ -1,3 +1,32 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.users {
+  &__name {
+    display: flex;
+    margin-bottom: 10px;
+
+    div {
+      &:first-child {
+        font-weight: 700;
+        margin-right: 10px;
+        float: right;
+        width: 60px;
+      }
+    }
+  }
+
+  &__email {
+    display: flex;
+
+    div {
+      &:first-child {
+        font-weight: 700;
+        margin-right: 10px;
+        float: right;
+        width: 60px;
+      }
+    }
+  }
+}

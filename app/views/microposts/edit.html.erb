@@ -1,6 +1,24 @@
-<h1>Editing Micropost</h1>
+<h1>Редактирование объявления</h1>
 
-<%= render 'form', micropost: @micropost %>
+
+<%= form_with(model: @micropost, local: true) do |form| %>
+  <div class="field">
+    <%= form.label "Описание" %>
+    <%= form.trix_editor :content, class: 'editor' %>
+  </div>
+
+  <div>
+       <div><%= form.label "Теги" %></div>
+       <div><%= form.text_field :all_tags, class: 'form-control' %></div>
+   </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
 
 <%= link_to 'Show', @micropost %> |
-<%= link_to 'Back', microposts_path %>
+<%= link_to 'Back', @microposts %>

@@ -1,0 +1,31 @@
+<%= provide(:title, "Результат поиска") %>
+<h3>Результат поиска по запросу <em><%= params[:query] %></em></h3>
+<% @results.each do |result| %>
+    <div class="col-md-12 microposts-show__title">
+      <h3>Заголовок:</h3>
+      <div><%= result.title %></div>
+    </div>
+    <div class="col-md-12 microposts-show__img">
+        <%= image_tag (result.picture.url) %>
+    </div>
+    <div class="col-md-12 microposts-show__content">
+      <div>Описание:</div>
+      <div><%= result.content %></div>
+    </div>
+    <div class="col-md-12 microposts-show__author">
+      <strong>Автор:</strong>
+      <%= link_to(result.user.name, result.user, class: "microposts__link") %>
+    </div>
+    <div class="col-md-12 microposts-show__status">
+      <strong>Статус:</strong>
+      <%= active_status(result.status) %>
+    </div>
+    <div class="timestamp col-md-12 microposts-show__date">
+        <span>Дата:</span> <%= time_ago_in_words(result.created_at) %>
+    </div>
+    <div class="col-md-12 footer-summary">
+        <strong>Теги:</strong>
+        <%= raw result.tags.map(&:name).map{ |t| link_to t, tag_path(t),
+                                                       class: 'tag tag-primary' }.join(' ')%>
+    </div>
+<% end %>

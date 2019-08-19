@@ -1,5 +1,23 @@
-<h1>New Micropost</h1>
+<% provide(:title, 'Создать объявление') %>
+<% if logged_in? %>
+<h1>Создать объявление</h1>
 
-<%= render 'form', micropost: @micropost %>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@microposts) do |f| %>
 
-<%= link_to 'Back', microposts_path %>
+            <%= f.label "Название" %>
+            <%= f.text_field :title, class: 'form-control' %>
+
+            <%= f.label "Описание" %>
+            <%= f.text_field :content, class: 'form-control' %>
+
+            <%= f.label "Статус" %>
+            <%= f.check_box :status %>
+
+            <%= f.submit "Создать", class: "btn btn-primary" %>
+
+            <% end %>
+    </div>
+</div>
+<% end %>

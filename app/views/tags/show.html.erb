@@ -1,0 +1,7 @@
+<%= provide(:title, @tag.name) %>
+
+<% if @tag.microposts.empty? %>
+    <h2>Статей нет</h2>
+<% else %>
+    <%= render @tag.microposts %>
+<% end %>
