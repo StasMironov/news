@@ -41,7 +41,6 @@ before_action :admin_user, only: :destroy
         if @user.update_attributes(user_params)
             flash[:succes] = "Профиль обновлён"
             redirect_to @user
-
         else
             render 'edit'
         end
@@ -55,8 +54,6 @@ before_action :admin_user, only: :destroy
 
     # Предфильтры
     # Подтверждает вход пользователя
-
-
 
     def correct_user
         @user = User.find(params[:id])
