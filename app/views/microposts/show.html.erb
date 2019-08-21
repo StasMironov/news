@@ -36,5 +36,32 @@
 </div>
 
 <div class="row">
-<%= render 'disqus' %>
+<h3>Создать комментарий:</h3>
+<%= render 'shared/comment_form' %>
+</div>
+
+<div class="row">
+<h3>Все комментарии:</h3>
+<div class="microposts-comments">
+    <% @comments.each do |comment| %>
+      <div class="microposts-comments__item">
+        <div><%= gravatar_for @user %></div>
+        <div class="microposts-comments__text" id="sel" )"><%= comment.comment_text %></div>
+        <div class="microposts-comments__tool">
+            <div class="microposts-comments__date">
+                <span>Дата:</span>  <%= time_ago_in_words( comment.created_at) %>
+            </div>
+            <div class="microposts-comments__author">
+                <span>Автор:</span><%= link_to set_user(comment.user_id), @micropost.user, :class=>"link" %>
+            </div>
+            <div class="microposts-comments__func">
+                 <% if current_user?(@micropost.user) %>
+                    <%= link_to "Удалить", comment, method: :delete,
+                                                           data: { confirm: "Вы уверены?" }, class: "microposts__link" %>
+                 <% end %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+</div>
 </div>

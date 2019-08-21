@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :microposts, shallow: true do
+        resources :comments
+  end
+
   get 'users/new'
   get 'microposts/new'
   get 'microposts/index'
-  get 'create_micropost' => 'microposts/show'
+
 
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
@@ -11,9 +15,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   get 'show' => 'users#show'
   get 'results', to: 'results#index', as: 'results'
-
+  post 'comment_create' => 'comments#create'
 
   resources :tags
+  resources :comments
 
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

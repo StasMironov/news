@@ -4,6 +4,7 @@ class Micropost < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
 
+  has_many :comments, dependent: :destroy
 
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
