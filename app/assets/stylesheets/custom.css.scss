@@ -285,7 +285,7 @@ input[type="text"], input[type="textarea"]   {
 }
 
 .main {
-
+  min-height: 100vh;
 }
 
 .link {
@@ -304,4 +304,12 @@ h1 {
   margin-bottom: 25px;
   border-bottom: 2px solid;
   border-bottom-color: rgb(232, 232, 232);;
+}
+
+footer {
+  #logo {
+    color: black;
+    float: none;
+    font-size: 13px;
+  }
 }
