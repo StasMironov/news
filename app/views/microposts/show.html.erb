@@ -43,8 +43,11 @@
 <% end %>
 
 <div class="row">
-<h3>Все комментарии (<span class="warrning">Создать комментарий могут только авторизованные пользователи!</span>):</h3>
-<div class="microposts-comments">
+<h3>Все комментарии (<span class="warrning">Создавать комментарии могут только авторизованные пользователи!</span>):</h3>
+ <% if @comments.empty?  %>
+    <div>Пока нет ни одного комментария, ваш будет первым.</div>
+ <% else %>
+    <div class="microposts-comments">
     <% @comments.each do |comment| %>
       <div class="microposts-comments__item">
         <div><%= gravatar_for @user %></div>
@@ -57,13 +60,16 @@
                 <span>Автор:</span><%= link_to set_user(comment.user_id), @micropost.user, :class=>"link" %>
             </div>
             <div class="microposts-comments__func">
+            <% if current_user %>
                  <% if comment.user_id == current_user.id %>
                     <%= link_to "Удалить", comment, method: :delete,
                                                            data: { confirm: "Вы уверены?" }, class: "microposts__link" %>
                  <% end %>
+            <% end %>
             </div>
         </div>
       </div>
     <% end %>
 </div>
+<% end %>
 </div>

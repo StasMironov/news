@@ -1,45 +1,46 @@
 <%= provide(:title, "Главная") %>
-
 <h1>Объявления</h1>
-
-<div class="post">
-<% @post.each do |micropost| %>
- <div class="post__item">
- <div class="post__img">
-     <%= image_tag(micropost.picture.url) if micropost.picture? %>
- </div>
- <div class="post__grid">
- <div class="post__block">
-    <span>Название:</span>
-    <%= micropost.title %>
- </div>
- <div class="post__block">
-    <span>Описание:</span>
-    <div class = "post__content">
-        <%= content_ad (micropost.content) %>
+<% if @post.empty?  %>
+     <div>Пока нет ни одного объявления.</div>
+<% else %>
+    <div class="post">
+    <% @post.each do |micropost| %>
+     <div class="post__item">
+     <div class="post__img">
+         <%= image_tag(micropost.picture.url) if micropost.picture? %>
+     </div>
+     <div class="post__grid">
+     <div class="post__block">
+        <span>Название:</span>
+        <%= micropost.title %>
+     </div>
+     <div class="post__block">
+        <span>Описание:</span>
+        <div class = "post__content">
+            <%= content_ad (micropost.content) %>
+        </div>
+     </div>
+     <div class="post__block">
+        <span>Автор:</span>
+        <%= link_to micropost.user.name, micropost.user, :class=>"link" %>
+     </div>
+     <div class="post__block">
+        <span>Статус:</span>
+        <%= active_status(micropost.status) %>
+     </div>
+     <div class="post__block">
+        <span>Дата создания:</span>
+        <%= time_ago_in_words(micropost.created_at) %>
+     </div>
+     <div class="tags">
+         <strong>Теги:</strong>
+         <%= raw micropost.tags.map(&:name).map{ |t| link_to t, tag_path(t),
+                                                 class: 'tag tag-primary' }.join(' ')%>
+     </div>
+     <div><%= link_to 'Подробнее', micropost, class: "link" %></div>
+     </div>
+     </div>
+    <% end %>
     </div>
- </div>
- <div class="post__block">
-    <span>Автор:</span>
-    <%= link_to micropost.user.name, micropost.user, :class=>"link" %>
- </div>
- <div class="post__block">
-    <span>Статус:</span>
-    <%= active_status(micropost.status) %>
- </div>
- <div class="post__block">
-    <span>Дата создания:</span>
-    <%= time_ago_in_words(micropost.created_at) %>
- </div>
- <div class="tags">
-     <strong>Теги:</strong>
-     <%= raw micropost.tags.map(&:name).map{ |t| link_to t, tag_path(t),
-                                             class: 'tag tag-primary' }.join(' ')%>
- </div>
- <div><%= link_to 'Подробнее', micropost, class: "link" %></div>
- </div>
- </div>
 <% end %>
-</div>
-
 
