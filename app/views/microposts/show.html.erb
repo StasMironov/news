@@ -35,10 +35,12 @@
 </div>
 </div>
 
+<% if logged_in? %>
 <div class="row">
 <h3>Создать комментарий:</h3>
 <%= render 'shared/comment_form' %>
 </div>
+<% end %>
 
 <div class="row">
 <h3>Все комментарии:</h3>
@@ -55,10 +57,8 @@
                 <span>Автор:</span><%= link_to set_user(comment.user_id), @micropost.user, :class=>"link" %>
             </div>
             <div class="microposts-comments__func">
-                 <% if current_user?(@micropost.user) %>
                     <%= link_to "Удалить", comment, method: :delete,
                                                            data: { confirm: "Вы уверены?" }, class: "microposts__link" %>
-                 <% end %>
             </div>
         </div>
       </div>
