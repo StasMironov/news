@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
     def new
        @micropost = Micropost.find(params[:micropost_id])
        @comment = current_user.comments.build
@@ -23,7 +24,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = Comment.find(params[:id])
+        @comment = current_user.comments.find(params[:id])
         if @comment.present?
           @comment.destroy
           flash[:success] = "Комментарий удалён!"

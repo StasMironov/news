@@ -43,7 +43,7 @@
 <% end %>
 
 <div class="row">
-<h3>Все комментарии:</h3>
+<h3>Все комментарии (<span class="warrning">Создать комментарий могут только авторизованные пользователи!</span>):</h3>
 <div class="microposts-comments">
     <% @comments.each do |comment| %>
       <div class="microposts-comments__item">
@@ -57,8 +57,10 @@
                 <span>Автор:</span><%= link_to set_user(comment.user_id), @micropost.user, :class=>"link" %>
             </div>
             <div class="microposts-comments__func">
+                 <% if comment.user_id == current_user.id %>
                     <%= link_to "Удалить", comment, method: :delete,
                                                            data: { confirm: "Вы уверены?" }, class: "microposts__link" %>
+                 <% end %>
             </div>
         </div>
       </div>
