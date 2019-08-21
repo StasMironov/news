@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
      @comment = current_user.comments.build(comment_params)
      @comment.micropost_id = @micropost.id
 
+
      if @comment.save
         flash[:success] = "Комментарий создан!"
         redirect_to @micropost

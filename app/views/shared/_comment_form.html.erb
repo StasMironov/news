@@ -1,6 +1,17 @@
+<% if @micropost.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= common.errors %></h5>
+    <ul>
+        <% @micropost.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for ([@micropost, @micropost.comments.build]) do |f| %>
   <div class=field>
-    <%= f.text_area :comment_text %>
+    <%= f.text_area :comment_text, :required => true%>
   </div>
   <div class=actions>
     <%= f.submit "Отправить" %>

@@ -21,10 +21,10 @@
     <div class="col-md-12">
         <%= form_with scope: :micropost, url: microposts_path, html: { multipart: true }, local: true do |f| %>
             <%= f.label :title %>
-            <%= f.text_field :title, class: 'form-control' %>
+            <%= f.text_field :title, class: 'form-control', :required => true %>
 
             <%= f.label "Описание" %>
-            <%= f.text_area :content, class: 'form-control' %>
+            <%= f.text_area :content, class: 'form-control', :required => true %>
 
             <div class="ms">
                 <div><%= f.label "Активность" %></div>
@@ -33,7 +33,7 @@
 
             <div>
                  <div><%= f.label "Теги" %></div>
-                 <div><%= f.text_field :all_tags, class: 'form-control' %></div>
+                 <div><%= f.text_field :all_tags, class: 'form-control', :required => true %></div>
              </div>
 
             <div class="bt">
